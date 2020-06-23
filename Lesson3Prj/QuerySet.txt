@@ -1,0 +1,33 @@
+run shell- python manage.py shell
+
+from Lesson3App.models import Student
+
+
+p=Student.objects.create(name='Johir',email='johir@gmail.com',dob='1975-05-12')
+p1=Student.objects.create(name='kader',email='kader@gmail.com',dob='1980-06-17')
+p2=Student(name='Rajib',email='rajib@gmail.com',dob='1991-05-12')
+p2.save()
+q1=Student.objects.all()
+Student.objects.filter(pk=8)
+Student.objects.filter(pk=8).update(name='ali')
+Student.objects.filter(pk=13).delete()
+
+Student.objects.get(id=3)
+Student.objects.get(name='rajon')
+Student.objects.get(name__iexact='rajib')
+
+Student.objects.filter(name__contains='k')
+Student.objects.filter(name__icontains='K')
+Student.objects.filter(id__in=[3,9])
+Student.objects.filter(id__gt=5)
+Student.objects.filter(id__gte=7)
+Student.objects.filter(id__lt=7)
+Student.objects.filter(id__lte=7)
+Student.objects.filter(name__startswith='r')
+Student.objects.filter(name__istartswith='raj')
+
+Student.objects.filter(id__range=(5,10))
+Student.objects.order_by('name')
+Student.objects.order_by('-name')
+Student.objects.all()[0:5]
+

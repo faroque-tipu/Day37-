@@ -1,0 +1,19 @@
+git config --global user.name "Faroque"
+git config --global user.email "faroque.omar@gmail.com"
+git config --global push.default matching
+git config --global alias.co checkout
+
+
+for everyday
+
+git init
+git add .
+git commit -m "This is my first commit"
+git remote add origin https://github.com/faroque-tipu/day35new.git
+
+git push -u origin master
+
+
+git.add .
+git commit -am "23/06/2020 Update"
+git push 
